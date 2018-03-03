@@ -78,21 +78,21 @@
        }
     }
     
-    shareScucess: function(shareChannel){
-       $.ajax({
-         url: "成功回调的api地址"，
-         type: "get/post",
-         dataType: "json",
-         data: {
-           shareChannel: shareChannel || ''
-         },
-         success: function(res){
-            if(res.code === 2){
-              '代码块'
-            }
-         }
-       })
-    }
+     shareScucess: function(shareChannel){
+        $.ajax({
+          url: "成功回调的api地址"，
+          type: "get/post",
+          dataType: "json",
+          data: {
+            shareChannel: shareChannel || ''
+          },
+          success: function(res){
+             if(res.code === 2){
+               '代码块'
+             }
+          }
+        })
+     }
   
  - 现在说一下facebook的特殊性，facebook的分享只能抓取线上或者是预发布的描述，而且对于图片的抓取必须是线上抓取。
    它的抓取的方式是在 <head> 中：
