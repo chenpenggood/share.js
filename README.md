@@ -4,4 +4,4 @@
 
 - 一般用于国外网站的分享主流社交平台，文件容量极小
 
-![image](https://github.com/chenpenggood/share.js/master/readImg/share.png?raw=true)
+![img](https://github.com/chenpenggood/share.js/master/readImg/share.png?raw=true) 
