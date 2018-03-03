@@ -38,25 +38,76 @@
        description: "this is a share tool"
        switch(className){
          case "facebook":
-           window.share.fackbook.start({
-             picture: shareImg,   //注意：新的facebook图片的分享有大变化，这里图片不能生效，下面会结束具体方法
-             name: description,
-             link: localtion.href， //注意：只能分享当前页面，否则fb抓取到指定页面的信息，这不是你想要的结果
-             caption: "web name",
-             description: descriptiton
-           },function(){
-             shareSuccess('facebook');  //分享成功回调
-           });
-           break;
+         window.share.fackbook.start({
+           picture: shareImg,   //注意：新的facebook图片的分享有大变化，这里图片不能生效，下面会结束具体方法
+           name: description,
+           link: localtion.href， //注意：只能分享当前页面，否则fb抓取到指定页面的信息，这不是你想要的结果
+           caption: "web name",
+           description: description
+         }, function(){
+           shareSuccess('facebook');  //分享成功回调
+         });
+         break;
 
          case "twitter":
          window.share.twitter.start({
-             link: localtion.href,
+             link: location.href,
              text: description
+         }, function(){
+            shareSuccess('twiter');  //分享成功回调
+         });
+         break;
+         
+         case "google":
+         window.share.google.start({
+           link: location.href,
+           text: description + location.href
+         }, function(){
+            shareSuccess('google');  //分享成功回调
+         });
+         break;
+         
+         case "pinterest":
+         window.share.pinterest.start({
+           link: location.href,
+           image: shareImg,
+           text: description + location.href
+         }, function(){
+            shareSuccess('pinterest');  //分享成功回调
          })
        }
     }
-
+    
+    shareScucess: function(shareChannel){
+       $.ajax({
+         url: "成功回调的api地址"，
+         type: "get/post",
+         dataType: "json",
+         data: {
+           shareChannel: shareChannel || ''
+         },
+         success: function(res){
+            if(res.code === 2){
+              '代码块'
+            }
+         }
+       })
+    }
+  
+ - 现在说一下facebook的特殊性，facebook的分享只能抓取线上或者是预发布的描述，而且对于图片的抓取必须是线上抓取。
+   它的抓取的方式是在 <head> 中：
+   
+   <meta property="og:type" content="product" />
+   <meta property="og:url" content="www.baibu.com"/>
+   <meta property="og:image" content="https://github.com/chenpenggood/share.js/blob/master/readImg/share.png?raw=true" />
+   <meta property="og:description" content="this is share tool" />
+   <meta property="og:site_name" content="share web" />
+   
+   <!-- <meta property="fb:app_id" content="100924140245002" /> 
+    <meta property="fb:admins" content="100004662303870" /> -->
+ 
+ 附上: facebook抓取调试地址： https://developers.facebook.com/tools/debug/sharing/  
+ 
 ### 文件包share集合了jQuery分享插件jquery.share.js享到QQ、微信、微博、google、in、tweeter等
 
 ![img](https://github.com/chenpenggood/share.js/blob/master/readImg/share.min.png?raw=true) 
