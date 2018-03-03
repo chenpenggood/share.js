@@ -111,3 +111,53 @@
 ### 文件包share集合了jQuery分享插件jquery.share.js享到QQ、微信、微博、google、in、tweeter等
 
 ![img](https://github.com/chenpenggood/share.js/blob/master/readImg/share.min.png?raw=true) 
+
+- HTML中导入share.min.css 和 share.min.js
+
+      <!-- 禁用 google、设置分享的描述 -->
+          <div class="social-share" data-disabled="google" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+
+       <!-- 设置微信二维码标题 -->
+       <div class="social-share" data-wechat-qrcode-title="请打开微信扫一扫"></div>
+
+       <!-- 针对特定站点使用不同的属性（title, url, description,image...） -->
+       <div class="social-share" data-weibo-title="这个标题只有的分享到微博时有用，其它标题为全局标题" data-qq-title="分享到QQ时用此标题"></div>
+
+       <!-- 使用: data-initialized="true" 标签或者 initialized 配置项来禁用自动生成icon功能。 -->
+       <div class="social-share" data-initialized="true">
+           <a href="#" class="social-share-icon icon-weibo"></a>
+           <a href="#" class="social-share-icon icon-qq"></a>
+           <a href="#" class="social-share-icon icon-qzone"></a>
+       </div>
+
+       <!-- 以上a标题会自动加上分享链接（a 标签必须带 icon-NAME 属性，不然分享链接不会自动加上）。 -->
+
+       <!-- 如果你想在分享icon列表中内置一些元素，比如放一个收藏按钮在分享按钮的后面： -->
+       <div class="social-share" data-mode="prepend">
+           <a href="javascript:;" class="social-share-icon icon-heart"></a>
+       </div>
+       <!-- 这样，所有的分享图标就会创建在容器的内容前面，反之可以用 append 创建在容器内容后面，当然这是默认的，也不需要这么做。 -->
+
+       <!-- 指定移动设备上显示的图标 -->
+       <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+       <!-- 当在手机上打开该页面的时候就只会显示这4个图标了。 -->
+       
+       
+       // 所有配置可选， 通常默认就满足需求：(记得导入jquery)
+      	//var $config = {
+       //  //...
+       // };
+
+      // $('.social-share').share($config);
+
+
+      // url                 : '', // 网址，默认使用 window.location.href
+      // source              : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+      // title               : '', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
+      // description         : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+      // image               : '', // 图片, 默认取网页中第一个img标签
+      // sites               : ['qzone', 'qq', 'weibo','wechat', 'douban'], // 启用的站点
+      // disabled            : ['google', 'facebook', 'twitter'], // 禁用的站点
+      // wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
+      // wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+
