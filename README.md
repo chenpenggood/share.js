@@ -97,14 +97,14 @@
  - 现在说一下facebook的特殊性，facebook的分享只能抓取线上或者是预发布的描述，而且对于图片的抓取必须是线上抓取。
    它的抓取的方式是在 <head> 中：
    
-   <meta property="og:type" content="product" />
-   <meta property="og:url" content="www.baibu.com"/>
-   <meta property="og:image" content="https://github.com/chenpenggood/share.js/blob/master/readImg/share.png?raw=true" />
-   <meta property="og:description" content="this is share tool" />
-   <meta property="og:site_name" content="share web" />
+       <meta property="og:type" content="product" />
+       <meta property="og:url" content="www.baibu.com"/>
+       <meta property="og:image" content="https://github.com/chenpenggood/share.js/blob/master/readImg/share.png?raw=true" />
+       <meta property="og:description" content="this is share tool" />
+       <meta property="og:site_name" content="share web" />
    
-   <!-- <meta property="fb:app_id" content="100924140245002" /> 
-    <meta property="fb:admins" content="100004662303870" /> -->
+       <!-- <meta property="fb:app_id" content="100924140245002" /> 
+        <meta property="fb:admins" content="100004662303870" /> -->
  
  附上: facebook抓取调试地址： https://developers.facebook.com/tools/debug/sharing/  
  
